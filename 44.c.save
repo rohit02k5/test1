@@ -1,0 +1,30 @@
+def LinearEquation(x1, y1, x2, y2, x3, y3):
+    # Calculate the coefficients a, b, and c of the line equation
+    a = y2 - y1
+    b = x1 - x2
+    c = x2 * y1 - x1 * y2
+    
+    # Calculate the value of the left-hand side of the line equation for the third point (x3, y3)
+    lhs = a * x3 + b * y3 + c
+    
+    if lhs == 0:
+        return 0  # The point (x3, y3) lies on the line
+    elif lhs > 0:
+        return 1  # The point (x3, y3) lies above the line
+    else:
+        return -1  # The point (x3, y3) lies below the line
+
+# Input coordinates
+x1, y1 = 1, 2
+x2, y2 = 3, 4
+x3, y3 = 2, 3
+
+# Check the position of the point (x3, y3) relative to the line
+result = LinearEquation(x1, y1, x2, y2, x3, y3)
+
+if result == 0:
+    print(f"The point ({x3}, {y3}) lies on the line.")
+elif result == 1:
+    print(f"The point ({x3}, {y3}) lies above the line.")
+else:
+    print(f"The point ({x3}, {y3}) lies below the line.")
